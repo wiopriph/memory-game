@@ -10,7 +10,8 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: #BBDEFB;
+    background: #5433FF;
+    background: linear-gradient(to right, #A5FECB, #20BDFF, #4661ff);
     font-size: 10px;
 }
 
@@ -20,6 +21,7 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
 .card {
     width: calc(25% - 1rem);
     height: calc(33.333% - 1rem);
@@ -27,6 +29,12 @@ body {
     position: relative;
     perspective: 100rem;
 }
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
 .front, .back {
     position: absolute;
     width: 100%;
@@ -36,25 +44,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    transition: .8s;
     backface-visibility: hidden;
     border-radius: .4rem;
-    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .front {
-    background-color: #fff;
+    background: repeating-linear-gradient(135deg, #B9ECFE, #B9ECFE 5px, #82DDFF 5px, #82DDFF 10px);
 }
 
 .back {
-    background-color: #BDBDBD;
+    background-color: #f9f9f9;
     transform: rotateY(180deg);
 }
 
-.card:hover .front {
+.flip .front {
     transform: rotateY(180deg);
 }
 
-.card:hover .back {
+.flip .back {
     transform: rotateY(360deg);
 }
